@@ -43,28 +43,27 @@ class MainModel
         // データベースアダプタを作成する
         $this->_read = Zend_Db::factory($db_read['type'], $read_params);
         // 文字コードをUTF-8に設定する
-        $this->_read->query("set names 'utf8'");
-
+//        $this->_read->query("set names 'utf8'");
         // データ取得形式を設定する
         $this->_read->setFetchMode(Zend_Db::FETCH_ASSOC);
 
-
-        // データベースの接続パラメータを定義する
-        $write_params = array(
-            'host' => $db_write['host'],
-            'username' => $db_write['username'],
-            'password' => $db_write['password'],
-            'dbname' => $db_write['name'],
-            'charset' => $db_write['charset'],
-            'driver_options' => $pdoParams
-        );
-        // データベースアダプタを作成する
-        $this->_write = Zend_Db::factory($db_read['type'], $write_params);
-        // 文字コードをUTF-8に設定する
-        $this->_write->query('set names "utf8"');
-
-        // データ取得形式を設定する
-        $this->_write->setFetchMode(Zend_Db::FETCH_ASSOC);
+//
+//        // データベースの接続パラメータを定義する
+//        $write_params = array(
+//            'host' => $db_write['host'],
+//            'username' => $db_write['username'],
+//            'password' => $db_write['password'],
+//            'dbname' => $db_write['name'],
+//            'charset' => $db_write['charset'],
+//            'driver_options' => $pdoParams
+//        );
+//        // データベースアダプタを作成する
+//        $this->_write = Zend_Db::factory($db_read['type'], $write_params);
+//        // 文字コードをUTF-8に設定する
+//        $this->_write->query('set names "utf8"');
+//
+//        // データ取得形式を設定する
+//        $this->_write->setFetchMode(Zend_Db::FETCH_ASSOC);
 
     }
 

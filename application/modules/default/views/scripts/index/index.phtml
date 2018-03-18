@@ -6,459 +6,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content='計数工学科アルゴリズム班によって制作されたアプリケーション、"MaySearch"が、あなたの五月祭ライフをより楽しく快適にします'>
-    <meta name="title" content="MaySearch">
+    <meta name="title" content="Yuri Mikawa">
 
-    <title>MaySearch</title>
+    <title>立替さん</title>
 
     <link href="/plugin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/plugin/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
 
-    <!--style.css-->
-    <link href="/plugin/css/style.css" rel="stylesheet">
-
-    <!--checkbox-->
-    <link href="/plugin/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-    <!-- steps-->
-    <link href="/plugin/css/plugins/steps/jquery.steps.css" rel="stylesheet">
-
-    <!-- common -->
-    <link href="/css/common.css" rel="stylesheet">
-    <!--widget-->
-    <link href="/css/widget-css.css" rel="stylesheet">
-
-    <!--favicon-->
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
-
-
-
-    <style>
-
-        .rec_pku_acd_icon {
-            width: 180px;
-            float: right;
-            text-align: right;
-        }
-        .width-over {
-            width: 100%;
-            padding: 3px 0 3px 34px;
-            text-indent: -15px;
-        }
-        .width-over i {
-            font-size: 15px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .width-over i.pe-7s-map-marker {
-            margin-right: 15px;
-        }
-        .width-over i.pe-7s-date {
-            margin-right: 16px;
-        }
-        .width-over i.pe-7s-clock {
-            margin-right: 16px;
-        }
-        .modal-head {
-            padding: 30px;
-            border-bottom: 1px solid #e5e5e5;
-            position: relative;
-        }
-        .modal-contents {
-            width: 100%;
-            padding: 30px 30px 15px;
-        }
-        .modal-exp {
-            padding: 0 15px;
-        }
-        .exp {
-            width: 100%;
-            padding: 0 15px;
-        }
-        .modal-contents .modal-p {
-            background-color: #a9a9a9;
-            width: 250px;
-            margin-left: -30px;
-            padding: 10px;
-            color: #ffffff;
-            font-size: 17px;
-            text-align: right;
-            position: relative;
-        }
-        .modal-contents .modal-p::before {
-            content: '';
-            height: 10px;
-            width: 250px;
-            position: absolute;
-            left: 0;
-            top: 44px;
-            margin-left: 10px;
-            background-color: #dcdcdc;
-        }
-        .modal-contents .modal-p::after {
-            content: '';
-            height: 44px;
-            width: 10px;
-            position: absolute;
-            padding: 5px;
-            margin-left: 10px;
-            background-color: #dcdcdc;
-        }
-        .modal-web {
-            margin: 25px;
-        }
-        .modal-footer {
-            background-color: #e5e5e5;
-        }
-
-        @media screen and ( max-width:887px ) {
-            .nav-tabs > li > a > span {
-                display: none;
-            }
-
-            .nav-tabs > li > a {
-                padding: 10px 7px 10px 12px;
-            }
-        }
-        #toppage-may {
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            z-index: 10000;
-            cursor: pointer;
-        }
-        #toppage-may:hover {
-            filter: brightness(1.05);
-        }
-        #toppage-comment {
-            display: none;
-            width: 190px;
-            left: 85px;
-            bottom: -18px;
-            background-color: rgba(255,69,0,0.6);
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 3px;
-            position: absolute;
-        }
-        #toppage-comment::after {
-            content: "";
-            position: absolute;
-            top: 60%; left: -10px;
-            margin-top: -10px;
-            display: block;
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 5px 10px 5px 0;
-            border-color: transparent rgba(255,69,0,0.6) transparent transparent;
-        }
-    </style>
-
 </head>
 <body>
-<!--<?php include_once("analyticstracking.php") ?>-->
-<p style="display:none;">
-    (English below.)
 
-    計数工学科アルゴリズム班によって制作されたアプリケーション、"MaySearch"が
-    あなたの五月祭ライフをより楽しく快適にします。
-</p>
+<div>
 
-<div id="wrapper">
-
-    <div id="page-wrapper" class="gray-bg">
-        <div id="page-next-wrapper">
+    <div>
+        <div>
 
             <div class="row">
-                <div class="col-lg-4 width-change">
-                    <div style="position: relative;">
-                        <div id="id1" class="m-t-md m-b-md" style="padding: 50px;">
-                            <a href="/"><img alt="MaySearch" style="width: 100%;" src="/img/logo/maysearch_square.png"></a>
-
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        立替さん
                         </div>
-                        <div id="id2" class="p-h-md p-w-sm" style="padding: 50px;">
-                            <a href="/"><img alt="MaySearch" style="width: 100%;" src="/img/logo/maysearch_long.png"></a>
-                        </div>
-                        <a target="_blank" href="https://gogatsusai.jp/90/search/result?id=394">
-                            <p id="toppage-comment">
-                                投票よろしくなのー、めぇ。
-                            </p>
-                        <img id="toppage-may" src="/img/toppage-maychan2.png">
-                        </a>
-
-                    </div>
-                    <div class="col-xs-12 sub-title b-r-md text-center">
-                        MaySearchは、東京大学工学部計数工学科の有志によって制作された、アルゴリズムを用いた経路最適化アプリケーションです。<br>
-                        五月祭の行きたい企画を選択すると、最適な経路を返します。<br>
-                        MaySearchを活用して、充実した五月祭を過ごしましょう！<br>
-                        <span class="label label-warning">SUPER</span> <font style="color: #8b4513; font-weight: bold;">企画の選択上限数が20個に増えました！</font>
-
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 show1" >
-                            <a href="https://twitter.com/share?url=https://maysearch.ap-phys.net&text=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E4%BA%94%E6%9C%88%E7%A5%AD%E4%BC%81%E7%94%BB%E7%B5%8C%E8%B7%AF%E6%8E%A2%E7%B4%A2%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8CMaySearch%E3%80%8D%E3%81%8C%E3%82%B9%E3%82%B4%E3%81%99%E3%81%8E%E3%82%8B%EF%BC%81&hashtags=%E4%BA%94%E6%9C%88%E7%A5%AD,MaySearch,%E5%B7%A5%E5%AD%A6%E5%8D%9A%E8%A6%A7%E4%BC%9A2017,%E5%B7%A5%E5%AD%A6%E9%83%A8%E5%BF%9C%E7%94%A8%E7%89%A9%E7%90%86%E7%B3%BB" target="_blank"><!--data-dnt="true"-->
-                                <div id="twitter" class="widget widget-left" style="background-color: #55acee">
-                                    <img src="/img/SNS/twitter.png">
-                                    <p>Twitterでシェア</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
-                            <a href="/search/algorithm" target="_blank">
-                                <div class="widget lazur-bg widget-right height2">
-                                    <i class="pe-7s-stopwatch fa-first"></i>
-                                    <i class="pe-7s-stopwatch fa-second"></i>
-                                    <p>このアプリ内で動く<br>アルゴリズムの紹介</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <a href="https://ap-phys.net/" target="_blank">
-                                <div class="widget navy-bg widget-left height2">
-                                    <i class="pe-7s-plugin fa-first"></i>
-                                    <i class="pe-7s-plugin fa-second"></i>
-                                    <p>工学部応用物理系<br>工学博覧会について</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                            <a href="https://gogatsusai.jp/90/visitor/app.html" target="_blank">
-                                <div id="eeic"  class="widget red-bg height3 SNS">
-                                    <img src="/img/logo/eeic.png">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 show2">
-                            <a href="https://twitter.com/share?url=https://maysearch.ap-phys.net&text=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E4%BA%94%E6%9C%88%E7%A5%AD%E4%BC%81%E7%94%BB%E7%B5%8C%E8%B7%AF%E6%8E%A2%E7%B4%A2%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8CMaySearch%E3%80%8D%E3%81%8C%E3%82%B9%E3%82%B4%E3%81%99%E3%81%8E%E3%82%8B%EF%BC%81&hashtags=%E4%BA%94%E6%9C%88%E7%A5%AD,MaySearch,%E5%B7%A5%E5%AD%A6%E5%8D%9A%E8%A6%A7%E4%BC%9A2017,%E5%B7%A5%E5%AD%A6%E9%83%A8%E5%BF%9C%E7%94%A8%E7%89%A9%E7%90%86%E7%B3%BB" target="_blank"><!--data-dnt="true"-->
-                                <div id="twitter" class="widget widget-right height3 SNS">
-                                    <img src="/img/SNS/twitter.png">
-                                    <p>Twitterで<br>シェア</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                            <div id="LINE" class="widget yellow-bg widget-right height3 SNS show3">
-                                <p>LINE SHARE</p>
-                                <div class="line-it-button" data-lang="ja" data-type="share-d" data-url="https://maysearch.ap-phys.net/" style="display: none;"></div>
+                        <div class="col-lg-12">
+                            人数を入力
+                            <select id="mem-num" name="mem-num">
+                                <?php for ($i=1; $i<=100; $i++): ?>
+                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                            <br>
+                            <div id="mem-name-box">
+                                <input type="text" name="mem-name1">
                             </div>
-                            <div id="LINE" class="widget yellow-bg widget-right height3 SNS show4">
-                                <div class="line-it-button" data-lang="ja" data-type="share-b" data-url="https://maysearch.ap-phys.net/" style="display: none;"></div>
-
-                            </div>
+                            <input type="text" name="mem-name1" id="mem-name" style="display: none;">
                         </div>
-
                     </div>
-
                 </div>
+
                 <div class="col-lg-8">
-                    <div class="ibox" id="all-cover">
-
-                        <div class="ibox-content">
-
-                            <form id="form" action="#" class="wizard-big">
-                                <h1>滞在日時</h1>
-                                <fieldset>
-                                    <div class="p-sm b-r-md background-muted">
-                                        <h2><span class="pe-7s-clock"> 滞在日時</span></h2>
-                                        <p class="text-muted" style="padding-left: 20px;">      滞在日と時間を入力してください。</p>
-                                    </div>
-                                    <div class="ibox">
-                                        <div class="ibox-content b-r-md">
-                                            <div class="col-sm-6">
-                                                <div class="contact-box center-version no-borders" style="color: #676a6c;">
-
-                                                    <a style="cursor: default;">
-
-                                                        <i class="pe-7s-date"></i>
-
-
-                                                        <h3 class="m-b-xs" style="margin-bottom: 30px;"><strong>滞在日</strong></h3>
-
-                                                        <address class="m-t-md">
-                                                            <div class="radio radio-inline radio-primary">
-                                                                <input type="radio" id="1day" value="20" name="date" style="display: initial;"> <label for="1day"> １日目（２０日） </label>
-                                                            </div>
-                                                            <div class="radio radio-inline radio-primary no-margins">
-                                                                <input type="radio" id="2day" value="21" name="date" style="display: initial;" checked="checked" > <label for="2day"> ２日目（２１日） </label>
-                                                            </div>
-                                                        </address>
-
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="contact-box center-version no-borders" style="color: #676a6c;">
-
-                                                    <a style="cursor: default;">
-
-                                                        <i class="pe-7s-clock"></i>
-
-
-                                                        <h3 class="m-b-xs" style="margin-bottom: 30px;"><strong>滞在開始・終了時刻</strong></h3>
-                                                        <div id="clock-check">
-                                                            <div class="input-group clockpicker" id="clock1">
-                                                                <input class="form-control" name="clock1" type="text" id="input-clock1" value="09:00" disabled="">
-                                                                <span class="input-group-addon">
-                                                                <span class="pe-7s-clock"> Click</span>
-                                                                </span>
-                                                            </div>
-                                                            <div class="input-group clockpicker" id="clock2">
-                                                                <input class="form-control" name="clock2" type="text" id="input-clock2" value="18:00" disabled="">
-                                                                <span class="input-group-addon">
-                                                                <span class="pe-7s-clock"> Click</span>
-                                                            </span>
-                                                            </div>
-                                                        </div>
-                                                        <div id="time-check">
-                                                            <input name="clock1" type="time" id="time-clock1" style="display: inline;" value="09:00"> 〜
-                                                            <input name="clock2" type="time" id="time-clock2" style="display: inline;" value="18:00" ><br>
-                                                        </div>
-                                                        <span id="clock-check-help" class="help-block m-b-none text-danger" style="display: none; text-align: center;">時刻が正しく入力されていません。<br>五月祭は09:00~18:00です。</span>
-
-
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </fieldset>
-                                <h1>現在地</h1>
-                                <fieldset>
-                                    <!--<div>
-                                        <img src="/img/map.png" class="mapper showcoords noborder iopacity50 icolorff0000" alt="本郷キャンパスマップ" usemap="#shape1" id="shape1">
-                                    </div>
-                                    <map name="shape1">
-                                      <area shape="default" href="#" alt="全体" region="all">
-                                    </map>-->
-                                    <div class="p-sm b-r-md background-muted">
-                                        <h2><i class="pe-7s-map-marker"> 現在地</i></h2>
-                                        <p id="select-start-pos-error" class="text-muted " style="padding-left: 20px;">現在地を選択してください。</p>
-                                    </div>
-                                    <div class="ibox">
-                                        <div id="sample02" class="ibox-content b-r-md">
-
-
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-
-                                <h1>企画選択</h1>
-                                <fieldset>
-                                    <div class="p-sm b-r-md background-muted">
-                                        <h2><i class="pe-7s-look"> 企画の選択</i></h2>
-                                        <p class="text-muted" style="padding-left: 20px;">行きたい企画を選択してください。</p>
-                                    </div>
-                                    <div class="ibox">
-
-
-                                        <div class="tabs-container">
-                                            <ul class="nav nav-tabs">
-                                                <!--<span class="pull-right small text-muted">1406 Elements</span>-->
-                                                <li class="active"><a data-toggle="tab" href="#tab-1"><i class="pe-7s-users" style="font-weight: bold;"></i> <span>キーワード</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-2"><i class="pe-7s-joy" style="font-weight: bold;"></i> <span>ジャンル</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-3"><i class="pe-7s-map-marker" style="font-weight: bold;"></i> <span>エリア</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-4"><i class="pe-7s-flag" style="font-weight: bold;"></i> <span>おすすめ</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-5"><i class="pe-7s-light" style="font-weight: bold;"></i> <span>ピックアップ</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-6"><i class="pe-7s-study" style="font-weight: bold;"></i> <span>学術企画</span></a></li>
-                                                <li class=""><a data-toggle="tab" href="#tab-7"><i class="pe-7s-star" style="font-weight: bold;"></i> <span>委員会企画</span></a></li>
-                                                <!--<li class=""><a data-toggle="tab" href="#tab-5"><i class="fa fa-briefcase"></i> これから開演予定の企画検索</a></li>-->
-                                            </ul>
-
-                                            <div class="tab-content" id="sample01">
-                                                <div class="sk-spinner sk-spinner-double-bounce">
-                                                    <div class="sk-double-bounce1"></div>
-                                                    <div class="sk-double-bounce2"></div>
-                                                </div>
-                                                <p class="sk-spinner-text text-muted">Wait a minute...</p>
-
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </fieldset>
-
-                                <h1>確認</h1>
-                                <fieldset>
-                                    <div class="p-sm b-r-md background-muted">
-                                        <h2><i class="pe-7s-check"> 確認</i></h2>
-                                        <p class="text-muted" style="padding-left: 20px;">      検索前のチェックを行ってください。</p>
-                                    </div>
-                                    <div class="ibox">
-                                        <div class="ibox-content b-r-md">
-                                            <div class="row" style="padding: 15px;">
-                                                <div class="col-sm-4">
-                                                    <div class="b-r-md bg-muted p-h-xs text-center m-b-md" style="position: relative;">
-                                                        <a href="#" class="check-link"><i class="pe-7s-date"></i> </a>
-                                                        <label id="jQueryTime" style="font-weight:normal;">２日目（２１日）</label>
-                                                        <!--<a style="position: absolute; right: 10px; bottom: 10px;" href="#form-h-0" aria-controls="form-p-0" class="btn btn-default btn-xs">変更</a>-->
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="b-r-md bg-muted p-h-xs text-center m-b-md" style="position: relative;">
-                                                        <a href="#" class="check-link"><i class="pe-7s-clock"></i> </a>
-                                                        <label id="clockText1" style="font-weight:normal;">09:00</label><label style="font-weight:normal;">〜</label>
-                                                        <label id="clockText2" style="font-weight:normal;">18:00</label>
-                                                        <!--<a style="position: absolute; right: 10px; bottom: 10px;" href="#form-h-0" aria-controls="form-p-0" class="btn btn-default btn-xs">変更</a>-->
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="b-r-md bg-muted p-h-xs text-center m-b-md" style="position: relative;">
-                                                        <a href="#" class="check-link"><i class="pe-7s-map-marker"></i> </a>
-                                                        <label id="here" style="font-weight:normal;"></label>
-                                                        <!--<a style="position: absolute; right: 10px; bottom: 10px;" href="#form-h-1" aria-controls="form-p-1" class="btn btn-default btn-xs">変更</a>-->
-                                                    </div>
-                                                </div>
-                                                <small style="font-size: 9px; margin-left: 15px;">日時を変更すると選択した企画がリセットされますので、注意してください。</small>
-                                                <div class="col-sm-12 last-conf-box">
-                                                    <ul id="search-all" class="list-group clear-list m-t">
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-
-                        </div>
-                    </div>
                 </div>
 
             </div>
         </div>
-
-
-        <div class="footer">
-            <div class="pull-right">
-                東京大学工学部応用物理系（物理工学科・計数工学科）
-            </div>
-            <div>
-                <strong>Applied Physics, University of Tokyo</strong> for May Festival 2017
-            </div>
-        </div>
-
-        <div class="sk-spinner sk-spinner-double-bounce">
-            <div class="sk-double-bounce1"></div>
-            <div class="sk-double-bounce2"></div>
-        </div>
-        <p class="sk-spinner-text text-muted">経路の最適化を行なっています…</p>
-        <button type="button" id="search-stop" class="sk-spinner-btn btn btn-default btn-outline">検索をやめる</button>
     </div>
 </div>
-
-<!-- LINE share -->
-<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-<script type="text/javascript">LineIt.loadButton();</script>
 
 <!-- Mainly scripts -->
 <script src="/plugin/js/jquery-3.1.1.min.js"></script>
@@ -474,6 +67,22 @@
 <script src="/plugin/js/plugins/steps/jquery.steps.min.js"></script>
 
 <script>
+
+    $('#mem-num').change(function() {
+        var num = parseInt($(this).val());
+        console.log(num);
+        $("#mem-name-box").html("");
+        for (var i=0; i<num; i++) {
+            var inputbox = $("#mem-name").clone();
+            $(inputbox).removeAttr("id");
+            $(inputbox).removeAttr("style");
+            $(inputbox).attr("name", "mem-name" + num);
+            $(inputbox).appendTo("#mem-name-box");
+        }
+
+    });
+
+
     /* twitterシェア*/
     window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
 
@@ -817,80 +426,6 @@
     }
 </script>
 
-
-<?php foreach ($this->data_all as $item) : ?>
-    <div class="modal inmodal fade"
-         id="Modal_pt_pid<?php echo $item['pt_pid']; ?>" tabindex="-1"
-         role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-head border-bottom" style="background-image: url('/img/genre/<?php echo $item['pd_genre1']; ?>/<?php echo $item['pd_genre2']; ?>.jpg');">
-                    <div class="transparent">
-                        <div class="row">
-                            <button type="button" class="close" data-dismiss="modal"><span class="m-r-sm" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <span class="pull-right m-r-md text-danger font-bold">
-                                                                                <?php echo $item['pd_genre1_']; ?>
-                                 / <?php echo $item['pd_genre2_']; ?>
-                                                                            </span>
-                        </div>
-                        <div>
-                            <h1 class="m-b-md font-bold"><?php echo $item['pd_label']; ?></h1>
-                            <h2><small><?php echo $item['pt_note']; ?></small></h2>
-                            <p class="m-b-xxs"><?php echo $item['pd_body']; ?></p>
-                            <div class="m-t-md" style="margin-left: -4px;">
-                                <div class="rec_pku_acd_icon">
-                                    <?php echo ($item['pd_rec_flg'] || $item['pd_pickup_flg']) ? '<img src="/img/icon/rec_pickup.jpg">' : ''; ?>
-                                    <?php echo ($item['pd_academic_flg']) ? '<img src="/img/icon/academic.jpg">' : ''; ?>
-                                </div>
-                                <div class="width-over">
-                                    <i class="pe-7s-date"></i><?php echo ($item['pp_full']) ? '終日<br>' : ''; ?>
-                                    <?php echo ($item['pt_start'] || $item['pt_end']) ? $item['pp_day'].'日 '.$item['pt_start'] . " <small> 〜 " . $item['pt_end'] . "</small><br>" : ''; ?>
-                                    <?php echo ($item['pt_open']) ? " (開場: ".$item['pt_open'].")" : ""; ?>
-                                </div>
-                                <div class="width-over">
-                                    <i class="pe-7s-map-marker"></i><?php echo $item['pp_place']; ?>
-                                </div>
-                                <div class="width-over">
-                                    <i class="pe-7s-clock"></i><?php echo $item['pt_time']; ?> 分
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-contents">
-                    <div class="row">
-                        <div class="exp">
-
-                            <div class="modal-p">
-                                企画説明
-                            </div>
-                            <div class="modal-web">
-                                <?php echo nl2br($item['pd_web_long']); ?>
-                            </div>
-                        </div>
-
-
-                        <div class="exp">
-                            <div class="modal-p">
-                                団体説明</div>
-                            <div class="modal-web">
-                                <?php echo nl2br($item['pd_web_body']); ?>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <a href="https://gogatsusai.jp/90/search/result?id=<?php echo $item['pd_pid']; ?>" type="button" class="btn btn-danger pull-left" target="_blank">五月祭公式HPの企画紹介ページへ</a>
-                    <button type="button" class="btn btn-white"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
 </body>
 
 </html>
