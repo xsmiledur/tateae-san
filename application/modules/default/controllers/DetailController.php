@@ -1,6 +1,6 @@
 <?php
 /**
- * IndexController
+ * DetailController
  */
 require_once 'Zend/Controller/Action.php';
 require_once 'Zend/Config/Ini.php';
@@ -8,13 +8,14 @@ require_once 'Zend/Session.php';
 
 require_once '../application/modules/default/models/MainModel.php';
 
-class IndexController extends Zend_Controller_Action
+class DetailController extends Zend_Controller_Action
 {
     private $_config;                         // 設定情報
     private $_session;                        // セッションのインスタンス
     private $_lang;                           // 言語設定
     private $_contents;                       // 言語データ
     private $_main;                           // モデルのインスタンス
+    public $view;
 
     public function init()
     {
@@ -77,18 +78,32 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
 
+        $request = $this->getRequest();
+        $id = $request->getParam("id");
+        $flg = true;
+        $memName = NULL;
+        if ($id != NULL) {
+            $memName = $this->_main->getGroupData($id);
+            $flg = ($memName != NULL);
+        }
 
-//        $request = $this->getRequest();
-//        //$search = $request->getParam('search');
-//        $this->view->data_all   = $this->_main->getProjectData();
+        if ($flg) {
+            $_num = $request->getPost("num");
+            $num = 0;
+            $memName = array();
+            for ($i = 1; $i <= $_num; $i++) {
+                $test = $request->getPost("mem-name" . (string)$i);
+                if ($test != NULL) {
+                    ++$num;
+                    array_push($memName, $test);
+                }
+            }
 
+        }
 
-/*
-        $text = "工学博覧会2017";
-        $encoded = rawurlencode( $text ) ;
-        echo $encoded;
-*/
+        $this->view->memName = $memName;
 
     }
+
 
 }

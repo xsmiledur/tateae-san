@@ -47,25 +47,71 @@ class MainModel
         // データ取得形式を設定する
         $this->_read->setFetchMode(Zend_Db::FETCH_ASSOC);
 
-//
-//        // データベースの接続パラメータを定義する
-//        $write_params = array(
-//            'host' => $db_write['host'],
-//            'username' => $db_write['username'],
-//            'password' => $db_write['password'],
-//            'dbname' => $db_write['name'],
-//            'charset' => $db_write['charset'],
-//            'driver_options' => $pdoParams
-//        );
-//        // データベースアダプタを作成する
-//        $this->_write = Zend_Db::factory($db_read['type'], $write_params);
-//        // 文字コードをUTF-8に設定する
+        // データベースの接続パラメータを定義する
+        $write_params = array(
+            'host' => $db_write['host'],
+            'username' => $db_write['username'],
+            'password' => $db_write['password'],
+            'dbname' => $db_write['name'],
+            'charset' => $db_write['charset'],
+            'driver_options' => $pdoParams
+        );
+
+        // データベースアダプタを作成する
+        $this->_write = Zend_Db::factory($db_write['type'], $write_params);
+        // 文字コードをUTF-8に設定する
 //        $this->_write->query('set names "utf8"');
-//
-//        // データ取得形式を設定する
-//        $this->_write->setFetchMode(Zend_Db::FETCH_ASSOC);
+
+        // データ取得形式を設定する
+        $this->_write->setFetchMode(Zend_Db::FETCH_ASSOC);
 
     }
+
+    public function getGroupData($id)
+    {
+        $select = $this->_read->select();
+        $select->from('group')
+            ->where('g_active_flg = ?', 1)
+            ->where('id = ?', $id);
+        $stmt = $select->query();
+        $group = $stmt->fetch();
+        if ($group == NULL) return false;
+
+        $select = $this->_read->select();
+        $select->from('person')
+            ->where('p_active_flg = ?', 1)
+            ->where('g-id = ?', $id);
+        $stmt = $select->query();
+        $person = $stmt->fetchAll();
+
+        if (count($person) == 0) return false;
+
+        $data = array();
+        foreach ($person as $item) {
+            $arr = array();
+            $arr["name"] = $person["name"];
+            $select = $this->_read->select();
+            $select->from('money')
+                ->where('m_active_flg = ?', 1)
+                ->where('p-id = ?', $item["id"]);
+            $stmt = $select->query();
+            $arr["data"] = $stmt->fetchAll();
+            array_push($data, $arr);
+        }
+
+        return $data;
+    }
+
+    public function insertData($data)
+    {
+//        $this->_write->
+    }
+
+    private function insertPersonData($data)
+    {
+//        foreach($data)
+    }
+
 
     /**
      * 企画データを取得

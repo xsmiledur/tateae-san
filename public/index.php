@@ -33,6 +33,7 @@ $front->setControllerDirectory(array(
     'default' => '../application/modules/default/controllers'
 ));
 
+
 //$front->dispatch();
 
 $front->throwExceptions(true);

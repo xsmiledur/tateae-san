@@ -25,29 +25,24 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-lg-12">
-                        立替さん
+                            立替さん
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            人数を入力
-                            <select id="mem-num" name="mem-num">
-                                <?php for ($i=1; $i<=100; $i++): ?>
-                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                                <?php endfor; ?>
-                            </select>
-                            <br>
-                            <form action="detail" method="post">
-                                <input type="hidden" id="num" name="num" value="1">
-                                <div id="mem-name-box">
-                                    <input type="text" name="mem-name1">
-                                </div>
-                                <input type="text" name="sample" id="mem-name" style="display: none;">
-                                <button type="submit" value="次へ">次へ</button>
-                            </form>
+                        <div class="col-xs-2">
+                            <div class="row"><div class="col-lg-12">名前</div></div>
+                            <?php foreach ($this->memName as $item): ?>
+                                <div class="row"><div class="col-lg-12"><?php echo $item; ?></div></div>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="row"><div class="col-lg-12">現在の合計</div></div>
+                            <div class="row"><div class="col-lg-12"><?php  ?></div></div>
                         </div>
                     </div>
                 </div>
+
+                <a href="/">元のページに戻る</a>
 
                 <div class="col-lg-8">
                 </div>
@@ -77,11 +72,11 @@
         $("#num").val(num);
         console.log(num);
         $("#mem-name-box").html("");
-        for (var i=1; i<=num; i++) {
+        for (var i=0; i<num; i++) {
             var inputbox = $("#mem-name").clone();
             $(inputbox).removeAttr("id");
             $(inputbox).removeAttr("style");
-            $(inputbox).attr("name", "mem-name" + i);
+            $(inputbox).attr("name", "mem-name" + num);
             $(inputbox).appendTo("#mem-name-box");
         }
 
@@ -268,7 +263,7 @@
             arr[2 - parseInt(num)] = parseInt(h * 60) + parseInt(m);
         } else flg = 0;
         if ((parseInt(arr[0]) >= parseInt(arr[1]) || parseInt(arr[0]) >= 1080 || parseInt(arr[0]) < 540 || parseInt(arr[1]) <= 540 || parseInt(arr[1]) > 1080)
-        && flg == 1) {
+            && flg == 1) {
             $('#clock-check').addClass('has-error');
             $('#clock-check-help').show();
         } else {
